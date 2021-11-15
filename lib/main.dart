@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moodful/ScreensWelcome/welcome_screen.dart';
+import 'package:moodful/Screens/Welcome/welcome_screen.dart';
 import 'package:moodful/constants.dart';
 
 
