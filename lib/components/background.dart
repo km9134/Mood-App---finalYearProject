@@ -38,3 +38,34 @@ class Background extends StatelessWidget {
     );
   }
 }
+
+class BackgroundLogoOnly extends StatelessWidget {
+  final Widget child;
+
+  const BackgroundLogoOnly({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height,
+      width: double.infinity,
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Positioned(
+            top: 150,
+            child: Image.asset(
+              "assets/images/logo.jpg",
+              width: size.width * 0.3,
+            ),
+          ),
+          child,
+        ],
+      ),
+    );
+  }
+}
