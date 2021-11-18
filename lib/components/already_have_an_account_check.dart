@@ -3,10 +3,12 @@ import 'package:moodful/constants.dart';
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
+  final VoidCallback press;
 
   const AlreadyHaveAnAccountCheck({
     Key? key,
     this.login = true,
+    required this.press,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
           style: TextStyle(color: kPrimaryColor),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: press,
           child: Text(
             login ? "Sign Up" : "Sign In",
             style: TextStyle(

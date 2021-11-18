@@ -4,10 +4,12 @@ import 'package:moodful/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
+  final VoidCallback press;
 
   const RoundedButton({
     Key? key,
     required this.text,
+    required this.press,
   }) : super(key: key);
 
   @override
@@ -32,7 +34,7 @@ class RoundedButton extends StatelessWidget {
         text,
         style: TextStyle(color: Colors.white),
       ),
-      onPressed: () {},
+      onPressed: press,
       style: ElevatedButton.styleFrom(
           primary: kPrimaryColor,
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),

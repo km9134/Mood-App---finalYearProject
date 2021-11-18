@@ -43,16 +43,15 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        RoundedButton(text: "Login"),
-        AlreadyHaveAnAccountCheck(
-          login: true,
-
+        RoundedButton(
+          text: "Login",
+          press: () {},
         ),
-
+        AlreadyHaveAnAccountCheck(
+          press: () {},
+          login: true,
+        ),
       ],
     ));
   }
 }
-
-
-
