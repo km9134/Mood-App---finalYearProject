@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moodful/components/background.dart';
 import 'package:moodful/constants.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -16,7 +15,7 @@ class RoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       width: size.width * 0.8,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
@@ -32,13 +31,13 @@ class RoundedButton extends StatelessWidget {
     return ElevatedButton(
       child: Text(
         text,
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
       onPressed: press,
       style: ElevatedButton.styleFrom(
           primary: kPrimaryColor,
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          textStyle: TextStyle(
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+          textStyle: const TextStyle(
               color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500)),
     );
   }
