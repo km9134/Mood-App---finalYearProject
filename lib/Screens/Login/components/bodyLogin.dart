@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/constants.dart';
 import 'package:moodful/components/TextFieldContainer.dart';
-import 'package:moodful/components/rounded_input_field.dart';
 import 'package:moodful/components/rounded_button.dart';
+import 'package:moodful/components/already_have_an_account_check.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -43,8 +43,16 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        RoundedButton(text: "Login")
+        RoundedButton(text: "Login"),
+        AlreadyHaveAnAccountCheck(
+          login: true,
+
+        ),
+
       ],
     ));
   }
 }
+
+
+
