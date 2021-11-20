@@ -4,6 +4,7 @@ import 'package:moodful/constants.dart';
 import 'package:moodful/components/TextFieldContainer.dart';
 import 'package:moodful/components/rounded_button.dart';
 import 'package:moodful/components/already_have_an_account_check.dart';
+import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -48,7 +49,16 @@ class Body extends StatelessWidget {
           press: () {},
         ),
         AlreadyHaveAnAccountCheck(
-          press: () {},
+          press: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return SignUpScreen();
+                },
+              ),
+            );
+          },
           login: true,
         ),
       ],

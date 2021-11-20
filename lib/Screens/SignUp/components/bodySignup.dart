@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/constants.dart';
 import 'package:moodful/components/TextFieldContainer.dart';
@@ -72,7 +73,16 @@ class Body extends StatelessWidget {
           press: () {},
         ),
         AlreadyHaveAnAccountCheck(
-          press: () {},
+          press: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return LoginScreen();
+                },
+              ),
+            );
+          },
           login: false,
         ),
       ],
