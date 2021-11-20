@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/components/rounded_button.dart';
@@ -35,7 +36,7 @@ class Body extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return LoginScreen();
+                    return SignUpScreen();
                   },
                 ),
               );
