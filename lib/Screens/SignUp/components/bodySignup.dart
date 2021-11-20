@@ -43,7 +43,7 @@ class Body extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               icon: Icon(
-                Icons.person,
+                Icons.mail,
                 color: kPrimaryColor,
               ),
               hintText: "Your email",
