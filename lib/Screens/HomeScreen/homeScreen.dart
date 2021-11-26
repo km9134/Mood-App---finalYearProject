@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:moodful/Screens/HomeScreen/home_screen.dart';
 import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/components/rounded_button.dart';
-import 'package:moodful/Screens/HomeScreen/home_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   @override

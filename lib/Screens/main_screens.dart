@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moodful/Screens/HomeScreen/components/homeScreen.dart';
+import 'package:moodful/Screens/HomeScreen/homeScreen.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 

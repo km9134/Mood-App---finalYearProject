@@ -4,7 +4,7 @@ import 'package:moodful/Screens/main_screens.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/components/rounded_button.dart';
-import 'package:moodful/Screens/HomeScreen/components/homeScreen.dart';
+import 'package:moodful/Screens/HomeScreen/homeScreen.dart';
 
 class Body extends StatelessWidget {
   @override
