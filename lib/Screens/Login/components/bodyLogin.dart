@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/constants.dart';
-import 'package:moodful/components/TextFieldContainer.dart';
+import 'package:moodful/components/text_field_container.dart';
 import 'package:moodful/components/rounded_button.dart';
 import 'package:moodful/components/already_have_an_account_check.dart';
 import 'package:moodful/Screens/SignUp/sign_up_screen.dart';

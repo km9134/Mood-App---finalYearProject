@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
+import 'package:moodful/Screens/main_screens.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/components/rounded_button.dart';
+import 'package:moodful/Screens/HomeScreen/components/homeScreen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -26,9 +28,7 @@ class Body extends StatelessWidget {
                 ),
               );
             }),
-
         Padding(padding: EdgeInsets.symmetric(vertical: 40)),
-
         RoundedButton(
             text: "Sign Up",
             press: () {
@@ -36,12 +36,12 @@ class Body extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignUpScreen();
+                    return MainScreen();
                   },
                 ),
               );
             }),
-
+        Padding(padding: EdgeInsets.symmetric(vertical: 40)),
       ],
     ));
   }
