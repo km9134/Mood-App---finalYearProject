@@ -41,15 +41,28 @@ class HomeScreen extends StatelessWidget {
             flex: 5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Positioned(
-                    top: 150,
-                    child: Image.asset(
-                      "assets/images/recordMoodLogo.jpg",
-                      width: size.width * 0.5,
-                    ),
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen(); // change to return something sensible
+                        },
+                      ),
+                    );
+                  }, // handle your image tap here
+                  child: Image.asset(
+                    "assets/images/recordMoodLogo.jpg",
+                    width: size.width * 0.5,
+
+                    fit: BoxFit.cover, // this is the solution for border
+
+                    height: 110.0,
                   ),
-                  ],
+                ),
+              ],
             ),
           ),
         ],
