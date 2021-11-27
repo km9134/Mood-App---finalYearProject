@@ -11,7 +11,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     // This size provide us total height and width of our screen
-    return Background(
+    return BackgroundLogoOnly(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -36,7 +36,7 @@ class Body extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignUpScreen();
+                    return MainScreen();
                   },
                 ),
               );
