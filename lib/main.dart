@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:moodful/Screens/Welcome/welcome_screen.dart';
 import 'package:moodful/constants.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,8 +19,10 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
     ),
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }
+
+
 
