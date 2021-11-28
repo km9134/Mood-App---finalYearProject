@@ -123,3 +123,49 @@ class BackgroundLogoRight extends StatelessWidget {
     );
   }
 }
+
+class BackgroundLogoRightBlank extends StatelessWidget {
+  final Widget child;
+  final String text;
+
+  const BackgroundLogoRightBlank({
+    Key? key,
+    required this.child,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height,
+      width: double.infinity,
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Positioned(
+            right: 20,
+            top: 50,
+            child: Image.asset(
+              "assets/images/logo.jpg",
+              width: size.width * 0.15,
+            ),
+          ),
+          Positioned(
+            left: 20,
+            top: 50,
+            child: Text(
+              text,
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25),
+            ),
+            width: size.width,
+          ),
+          child,
+        ],
+      ),
+    );
+  }
+}

@@ -34,6 +34,8 @@ dependencies:
   path:
   permission_handler: ^8.3.0
   image_picker:
+  percent_indicator: "^2.1.7+2"
+  fl_chart: ^0.35.0
 
 
   # The following adds the Cupertino Icons font to your application.

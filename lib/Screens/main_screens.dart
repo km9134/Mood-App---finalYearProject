@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moodful/Screens/HomeScreen/homeScreen.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
+import 'package:moodful/Screens/InsightsScreen/insightScreen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _MainScreenState extends State<MainScreen> {
 int pageIndex =0;
   List <Widget> pageList = <Widget>[
     HomeScreen(),
-    SignUpScreen(),
+    InsightScreen(),
     LoginScreen(),
   ];
   @override
