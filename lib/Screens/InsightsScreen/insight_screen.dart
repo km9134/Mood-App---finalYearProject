@@ -5,6 +5,8 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:moodful/Screens/InsightsScreen/Components/days_tracked.dart';
 
 class InsightScreen extends StatelessWidget {
+  const InsightScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -16,19 +18,19 @@ class InsightScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Spacer(),
-          Spacer(),
-          Spacer(),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 8.0, bottom: 16.0, right: 8.00),
+                    EdgeInsets.only(left: 8.0, bottom: 16.0, right: 8.00),
                 child: Text(
-                  "Mood Preformance",
-                  style: const TextStyle(
+                  "Mood Performance",
+                  style: TextStyle(
                       color: kPrimaryColor,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
@@ -41,19 +43,19 @@ class InsightScreen extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  new CircularPercentIndicator(
+                  CircularPercentIndicator(
                     radius: 100.0,
                     lineWidth: 13.0,
                     animation: true,
                     percent: 0.6,
-                    center: new Text(
+                    center: const Text(
                       "60.0%",
-                      style: new TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 20.0),
                     ),
-                    header: new Text(
+                    header:  const Text(
                       "Positive",
-                      style: new TextStyle(
+                      style:  TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 17.0),
                     ),
                     circularStrokeCap: CircularStrokeCap.round,
@@ -64,19 +66,19 @@ class InsightScreen extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  new CircularPercentIndicator(
+                   CircularPercentIndicator(
                     radius: 100.0,
                     lineWidth: 13.0,
                     animation: true,
                     percent: 0.2,
-                    center: new Text(
+                    center:  const Text(
                       "20.0%",
-                      style: new TextStyle(
+                      style:  TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 20.0),
                     ),
-                    header: new Text(
+                    header:  const Text(
                       "Neutral",
-                      style: new TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 17.0),
                     ),
                     circularStrokeCap: CircularStrokeCap.round,
@@ -87,19 +89,19 @@ class InsightScreen extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  new CircularPercentIndicator(
+                  CircularPercentIndicator(
                     radius: 100.0,
                     lineWidth: 13.0,
                     animation: true,
                     percent: 0.2,
-                    center: new Text(
+                    center: const Text(
                       "20%",
-                      style: new TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 20.0),
                     ),
-                    header: new Text(
+                    header:  const Text(
                       "Negative",
-                      style: new TextStyle(
+                      style:  TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 17.0),
                     ),
                     circularStrokeCap: CircularStrokeCap.round,
@@ -112,13 +114,13 @@ class InsightScreen extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Padding(
-                padding: const EdgeInsets.only(
+                padding: EdgeInsets.only(
                     left: 4.0, bottom: 8.0, top: 20.0, right: 4.0),
                 child: Text(
                   "Days Tracked",
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: kPrimaryColor,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
@@ -137,7 +139,7 @@ class InsightScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 200,
                   width: size.width * 0.9,
-                  child: DaysTracked(
+                  child: const DaysTracked(
                     y1: 2,
                     y2: 1,
                     y3: 4,
@@ -153,13 +155,13 @@ class InsightScreen extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 8.0, bottom: 16.0, right: 8.00),
+                    EdgeInsets.only(left: 8.0, bottom: 16.0, right: 8.00),
                 child: Text(
                   "Top Associations",
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: kPrimaryColor,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
@@ -172,7 +174,7 @@ class InsightScreen extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Column(
-                  children: [
+                  children: const [
                     Icon(
                       Icons.thumb_up,
                       color: Colors.green,
@@ -185,24 +187,24 @@ class InsightScreen extends StatelessWidget {
               Expanded(
                 flex: 4,
                 child: Column(
-                  children:[
-                  Text(
-                    "Excersise",
-                    style: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ],
+                  children: const [
+                    Text(
+                      "Exercise",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
                 flex: 4,
                 child: Column(
-                  children:[
+                  children: const [
                     Text(
                       "64%",
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.grey,
                           fontSize: 15,
                           fontWeight: FontWeight.normal),
@@ -219,12 +221,13 @@ class InsightScreen extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Column(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.thumb_down,
                         color: Colors.red,
                         size: 24.0,
-                        semanticLabel: 'Text to announce in accessibility modes',
+                        semanticLabel:
+                            'Text to announce in accessibility modes',
                       ),
                     ],
                   ),
@@ -232,10 +235,10 @@ class InsightScreen extends StatelessWidget {
                 Expanded(
                   flex: 4,
                   child: Column(
-                    children:[
+                    children: const [
                       Text(
                         "Arguments",
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.grey,
                             fontSize: 15,
                             fontWeight: FontWeight.normal),
@@ -246,10 +249,10 @@ class InsightScreen extends StatelessWidget {
                 Expanded(
                   flex: 4,
                   child: Column(
-                    children:[
+                    children: const [
                       Text(
                         "22%",
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.grey,
                             fontSize: 15,
                             fontWeight: FontWeight.normal),
@@ -260,7 +263,7 @@ class InsightScreen extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );

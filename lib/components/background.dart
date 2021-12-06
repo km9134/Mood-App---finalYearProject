@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moodful/Screens/Welcome/welcome_screen.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
@@ -11,7 +12,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(
@@ -50,17 +51,33 @@ class BackgroundLogoOnly extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
+
           Positioned(
             top: 150,
-            child: Image.asset(
+
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const WelcomeScreen();                       // change to return something sensible
+                    },
+                  ),
+                );
+              }, // handle your image tap here
+              child: Image.asset(
               "assets/images/logo.jpg",
               width: size.width * 0.3,
+
+
+              ),
             ),
           ),
           child,
@@ -83,7 +100,7 @@ class BackgroundLogoRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(
@@ -137,7 +154,7 @@ class BackgroundLogoRightBlank extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(
