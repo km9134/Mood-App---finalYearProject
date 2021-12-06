@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:moodful/Screens/HomeScreen/home_screen.dart';
-import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/Screens/SettingsScreen/account_screen.dart';
-import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 import 'package:moodful/Screens/InsightsScreen/insight_screen.dart';
-import 'package:moodful/Screens/SettingsScreen/account_screen.dart';
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -14,9 +13,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 int pageIndex =0;
   List <Widget> pageList = <Widget>[
-    HomeScreen(),
-    InsightScreen(),
-    AccountScreen(),
+    const HomeScreen(),
+    const InsightScreen(),
+    const AccountScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ body:pageList[pageIndex],
           });
         },
         type:BottomNavigationBarType.fixed,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon:Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon:Icon(Icons.bar_chart), label: "Insights"),
           BottomNavigationBarItem(icon:Icon(Icons.settings), label: "Settings"),

@@ -5,7 +5,6 @@ import 'package:moodful/Screens/SettingsScreen/privacy_screen.dart';
 import 'package:moodful/Screens/SettingsScreen/support_screen.dart';
 import 'package:moodful/Screens/SettingsScreen/terms_conditions_screen.dart';
 import 'package:moodful/constants.dart';
-import 'package:moodful/Screens/Login/login_screen.dart';
 
 class SettingsSideNavBar extends StatefulWidget {
   const SettingsSideNavBar({
@@ -48,7 +47,7 @@ class _SettingsSideNavBarState extends State<SettingsSideNavBar> {
                 selectedIndex = 0;
               });
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => AccountScreen()));
+                  MaterialPageRoute(builder: (context) => const AccountScreen()));
             },
           ),
           ListTile(
@@ -72,7 +71,7 @@ class _SettingsSideNavBarState extends State<SettingsSideNavBar> {
                 selectedIndex = 2;
               });
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => SupportScreen()));
+                  MaterialPageRoute(builder: (context) => const SupportScreen()));
             },
           ),
           ListTile(
@@ -85,7 +84,7 @@ class _SettingsSideNavBarState extends State<SettingsSideNavBar> {
               });
 
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => TCScreen()));
+                  MaterialPageRoute(builder: (context) => const TCScreen()));
             },
           ),
           ListTile(
@@ -97,7 +96,7 @@ class _SettingsSideNavBarState extends State<SettingsSideNavBar> {
                 selectedIndex = 4;
               });
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => PrivacyScreen()));
+                  MaterialPageRoute(builder: (context) => const PrivacyScreen()));
             },
           ),
         ],
