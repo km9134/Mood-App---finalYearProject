@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
-import 'package:moodful/components/rounded_button.dart';
-import 'package:moodful/components/background.dart';
+
 
 
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -19,12 +19,12 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Spacer(),
+          const Spacer(),
           Expanded(
             flex: 5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Expanded(
                   flex: 10,
                   child: Text(
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                     "Glad you're back, please enter a mood for today.\n\n "
                     "Be sure to check the insights page for the most up to date mood analysis\n\n"
                     "The more you know the more control you have",
-                    style: const TextStyle(color: Colors.black, fontSize: 15),
+                    style: TextStyle(color: Colors.black, fontSize: 15),
                     textAlign: TextAlign.center,
                   ),
                 ),
