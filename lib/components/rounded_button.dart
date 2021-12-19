@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moodful/constants.dart';
+import 'package:provider/src/provider.dart';
+
+import 'authentication_service.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;

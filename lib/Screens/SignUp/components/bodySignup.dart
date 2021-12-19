@@ -5,8 +5,15 @@ import 'package:moodful/constants.dart';
 import 'package:moodful/components/text_field_container.dart';
 import 'package:moodful/components/rounded_button.dart';
 import 'package:moodful/components/already_have_an_account_check.dart';
+import 'package:provider/src/provider.dart';
+
+import '../../../components/authentication_service.dart';
+import '../../../main.dart';
 
 class Body extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -42,6 +49,7 @@ class Body extends StatelessWidget {
         ),
         TextFieldContainer(
           child: TextField(
+            controller: emailController,
             decoration: InputDecoration(
               icon: Icon(
                 Icons.mail,
@@ -54,6 +62,7 @@ class Body extends StatelessWidget {
         ),
         TextFieldContainer(
           child: TextField(
+            controller: passwordController,
             decoration: InputDecoration(
               icon: Icon(
                 Icons.lock,
@@ -69,8 +78,21 @@ class Body extends StatelessWidget {
           ),
         ),
         RoundedButton(
-          text: "Sign Up",
-          press: () {},
+          text: "SignUp",
+          press: () {
+            context.read<AuthenticationService>().signUp(
+                  email: emailController.text.trim(),
+                  password: passwordController.text.trim(),
+                );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return AuthenticationWrapper();
+                },
+              ),
+            );
+          },
         ),
         AlreadyHaveAnAccountCheck(
           press: () {

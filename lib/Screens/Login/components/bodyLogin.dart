@@ -5,8 +5,14 @@ import 'package:moodful/components/text_field_container.dart';
 import 'package:moodful/components/rounded_button.dart';
 import 'package:moodful/components/already_have_an_account_check.dart';
 import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
+import 'package:moodful/components/authentication_service.dart';
+import 'package:moodful/main.dart';
+import 'package:provider/provider.dart';
 
 class Body extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -18,6 +24,7 @@ class Body extends StatelessWidget {
         Padding(padding: EdgeInsets.symmetric(vertical: 20)),
         TextFieldContainer(
           child: TextField(
+            controller: emailController,
             decoration: InputDecoration(
               icon: Icon(
                 Icons.person,
@@ -30,6 +37,7 @@ class Body extends StatelessWidget {
         ),
         TextFieldContainer(
           child: TextField(
+            controller: passwordController,
             decoration: InputDecoration(
               icon: Icon(
                 Icons.lock,
@@ -44,9 +52,32 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
+        ElevatedButton(
+          onPressed: () {
+            context.read<AuthenticationService>().signIn(
+                  email: emailController.text.trim(),
+                  password: passwordController.text.trim(),
+                );
+            AuthenticationWrapper();
+          },
+          child: Text("Sign in"),
+        ),
         RoundedButton(
           text: "Login",
-          press: () {},
+          press: () {
+            context.read<AuthenticationService>().signIn(
+                  email: emailController.text.trim(),
+                  password: passwordController.text.trim(),
+                );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return AuthenticationWrapper();
+                },
+              ),
+            );
+          },
         ),
         AlreadyHaveAnAccountCheck(
           press: () {

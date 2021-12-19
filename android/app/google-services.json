@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "272050389199",
+    "project_id": "moodful-1f189",
+    "storage_bucket": "moodful-1f189.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272050389199:android:8df7b1094a6cea9ea8f7ba",
+        "android_client_info": {
+          "package_name": "com.example.moodful"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272050389199-72esu2aa0kklsup77jlk6vc2gmt9eclj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKXHBd9vrarRUv3pu2J2qhrv-3WuEooUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272050389199-72esu2aa0kklsup77jlk6vc2gmt9eclj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "272050389199-bru11f3a6fjsbfu1jajp9b29r234q5n2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.cocoapods.Pods-Runner"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
