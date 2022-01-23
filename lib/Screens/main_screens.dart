@@ -20,7 +20,9 @@ int pageIndex =0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
 body:pageList[pageIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: pageIndex,
         onTap: (value){

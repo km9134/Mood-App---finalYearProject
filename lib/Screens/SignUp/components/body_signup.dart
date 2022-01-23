@@ -5,27 +5,31 @@ import 'package:moodful/constants.dart';
 import 'package:moodful/components/text_field_container.dart';
 import 'package:moodful/components/rounded_button.dart';
 import 'package:moodful/components/already_have_an_account_check.dart';
-import 'package:provider/src/provider.dart';
-
+import 'package:provider/provider.dart';
 import '../../../components/authentication_service.dart';
 import '../../../main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Body extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+
+  Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    // This size provide us total height and width of our screen
     return BackgroundLogoOnly(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Padding(padding: EdgeInsets.symmetric(vertical: 60)),
+        const Padding(padding: EdgeInsets.symmetric(vertical: 60)),
         TextFieldContainer(
           child: TextField(
-            decoration: InputDecoration(
+            controller: firstNameController,
+            decoration: const InputDecoration(
               icon: Icon(
                 Icons.person,
                 color: kPrimaryColor,
@@ -37,7 +41,8 @@ class Body extends StatelessWidget {
         ),
         TextFieldContainer(
           child: TextField(
-            decoration: InputDecoration(
+            controller: lastNameController,
+            decoration: const InputDecoration(
               icon: Icon(
                 Icons.person,
                 color: kPrimaryColor,
@@ -50,7 +55,7 @@ class Body extends StatelessWidget {
         TextFieldContainer(
           child: TextField(
             controller: emailController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               icon: Icon(
                 Icons.mail,
                 color: kPrimaryColor,
@@ -63,7 +68,7 @@ class Body extends StatelessWidget {
         TextFieldContainer(
           child: TextField(
             controller: passwordController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               icon: Icon(
                 Icons.lock,
                 color: kPrimaryColor,
@@ -83,12 +88,14 @@ class Body extends StatelessWidget {
             context.read<AuthenticationService>().signUp(
                   email: emailController.text.trim(),
                   password: passwordController.text.trim(),
+                  firstName: firstNameController.text.trim(),
+                  lastName: lastNameController.text.trim(),
                 );
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return AuthenticationWrapper();
+                  return const AuthenticationWrapper();
                 },
               ),
             );

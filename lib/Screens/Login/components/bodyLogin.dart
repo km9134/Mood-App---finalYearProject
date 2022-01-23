@@ -8,6 +8,8 @@ import 'package:moodful/Screens/SignUp/sign_up_screen.dart';
 import 'package:moodful/components/authentication_service.dart';
 import 'package:moodful/main.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class Body extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -52,7 +54,7 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        ElevatedButton(
+        /*ElevatedButton(
           onPressed: () {
             context.read<AuthenticationService>().signIn(
                   email: emailController.text.trim(),
@@ -61,7 +63,7 @@ class Body extends StatelessWidget {
             AuthenticationWrapper();
           },
           child: Text("Sign in"),
-        ),
+        ),*/
         RoundedButton(
           text: "Login",
           press: () {

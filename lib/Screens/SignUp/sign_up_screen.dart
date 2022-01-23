@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moodful/Screens/SignUp/components/bodySignup.dart';
-
+import 'package:moodful/Screens/SignUp/components/body_signup.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override
@@ -11,7 +10,7 @@ class SignUpScreen extends StatelessWidget {
         physics: ClampingScrollPhysics(parent: NeverScrollableScrollPhysics()),
         child: Container(
           child: Column(
-            children:[
+            children: [
               Body(),
             ],
           ),

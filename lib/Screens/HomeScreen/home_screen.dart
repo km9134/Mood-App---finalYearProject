@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     // This size provide us total height and width of our screen
 
+
     //return Scaffold(
     return BackgroundLogoRight(
       text: "Home",
