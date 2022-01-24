@@ -56,19 +56,5 @@ class AuthenticationService {
     }
   }
 
-  Future<String?> updateDetails(
-      {required String firstName, required String lastName}) async {
-    try {
-      var currentUser = FirebaseAuth.instance.currentUser;
-      FirebaseFirestore.instance
-          .collection('USER_TABLE')
-          .doc(currentUser!.uid)
-          .set({'firstName': firstName, 'lastName': lastName},
-              SetOptions(merge: true));
 
-      return "Signed In";
-    } on FirebaseAuthException catch (e) {
-      return e.message;
-    }
-  }
 }
