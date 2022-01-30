@@ -7,34 +7,25 @@ import 'package:moodful/Screens/Login/login_screen.dart';
 import 'package:moodful/components/camera_screen.dart';
 import 'package:moodful/main.dart';
 
-
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
-
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   Future<DocumentSnapshot<Map<String, dynamic>>>? _fetchedData;
 
   @override
   void initState() {
     super.initState();
     _fetchedData = getData();
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
-
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
 
     return FutureBuilder(
       future: _fetchedData,
@@ -42,7 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
           AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasData) {
           return BackgroundLogoRight(
-
             text: "Home",
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -57,9 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         flex: 10,
                         child: Text(
                           "${snapshot.data!.data()!["firstName"]} \n\n "
-                              "Glad you're back, please enter a mood for today.\n\n "
-                              "Be sure to check the insights page for the most up to date mood analysis\n\n"
-                              "The more you know the more control you have",
+                          "Glad you're back, please enter a mood for today.\n\n "
+                          "Be sure to check the insights page for the most up to date mood analysis\n\n"
+                          "The more you know the more control you have",
                           style: TextStyle(color: Colors.black, fontSize: 15),
                           textAlign: TextAlign.center,
                         ),
@@ -75,10 +65,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       GestureDetector(
                         onTap: () async {
                           await availableCameras().then(
-                                (value) => Navigator.push(
+                            (value) => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => CameraPage(cameras: value,),
+                                builder: (context) => CameraPage(
+                                  cameras: value,
+                                ),
                               ),
                             ),
                           );
@@ -98,8 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           );
-        }
-        else {
+        } else {
           return CircularProgressIndicator();
         }
       },
@@ -112,7 +103,5 @@ class _HomeScreenState extends State<HomeScreen> {
         .collection('USER_TABLE')
         .doc(currentUser!.uid)
         .get();
-
   }
-
 }
