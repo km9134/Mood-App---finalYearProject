@@ -1,8 +1,11 @@
+import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:moodful/components/background.dart';
 import 'package:moodful/Screens/Login/login_screen.dart';
+import 'package:moodful/components/camera_screen.dart';
+import 'package:moodful/main.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -21,10 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _fetchedData = getData();
+
   }
+
+
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery
         .of(context)
         .size;
@@ -66,13 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return LoginScreen(); // change to return something sensible
-                              },
+                        onTap: () async {
+                          await availableCameras().then(
+                                (value) => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CameraPage(cameras: value,),
+                              ),
                             ),
                           );
                         }, // handle your image tap here

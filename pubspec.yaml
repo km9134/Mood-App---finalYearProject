@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera:
+  camera: ^0.8.1+3
   path_provider:
   path:
   permission_handler: ^8.3.0

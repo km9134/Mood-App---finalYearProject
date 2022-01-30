@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:moodful/Screens/Welcome/welcome_screen.dart';
 import 'package:moodful/Screens/main_screens.dart';
@@ -5,10 +6,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:moodful/components/authentication_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:moodful/components/camera_screen.dart';
+
+List<CameraDescription>? camera;
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  camera = await availableCameras();
+
+
+
   runApp(MyApp());
 }
 
